@@ -63,7 +63,7 @@ namespace LocalSolarTimeWPF
         {
             double timeZoneCenter = timeZone * 15.0;
             double solarTimeOffset = 4 * (longitude - timeZoneCenter) + ComputeEqOfTime(now.DayOfYear);
-            solarTimeOffset = now.IsDaylightSavingTime() ? solarTimeOffset + 60 : solarTimeOffset;
+            solarTimeOffset = now.IsDaylightSavingTime() ? solarTimeOffset - 60 : solarTimeOffset;
             return solarTimeOffset;
         }
 
